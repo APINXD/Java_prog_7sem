@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #003399" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller_PersonalAccount">
+    <children>
+        <AnchorPane layoutY="57.0" prefHeight="543.0" prefWidth="1000.0" style="-fx-background-color: #dfe1ee;">
+            <children>
+                <ListView fx:id="my_notes_ListView" layoutX="109.0" layoutY="113.0" onMouseClicked="#NoteItem_handleMouseClick" prefHeight="403.0" prefWidth="775.0" />
+            <Label layoutX="146.0" layoutY="76.0" prefHeight="22.0" prefWidth="108.0" text="Мои Записи">
+               <font>
+                  <Font name="Corbel Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="31.0" fitWidth="26.0" layoutX="111.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/notes.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="l_fio" layoutX="112.0" layoutY="27.0" text="Фамилия Имя Отчество">
+               <font>
+                  <Font name="Corbel" size="24.0" />
+               </font>
+            </Label>
+            </children></AnchorPane>
+        <Hyperlink fx:id="hyperlink_settings" layoutX="863.0" layoutY="13.0" onAction="#hyperlink_settings_Click" text="Настройки" textFill="WHITE">
+            <font>
+                <Font name="Corbel Light" size="18.0" />
+            </font>
+        </Hyperlink>
+      <Hyperlink fx:id="hyperlink_main" layoutX="35.0" layoutY="13.0" onAction="#hyperlink_main_Click" text="На главную" textFill="WHITE">
+         <font>
+            <Font name="Corbel Light" size="18.0" />
+         </font>
+      </Hyperlink>
+    </children>
+</AnchorPane>
