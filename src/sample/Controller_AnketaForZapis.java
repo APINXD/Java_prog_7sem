@@ -61,7 +61,8 @@ public class Controller_AnketaForZapis implements Initializable {
             stage.close();
             Stage stage2 = new Stage();
             stage2.initModality(Modality.APPLICATION_MODAL);
-            Label label = new Label("Запись прошла успешно! " + fio_pols.getText()+"!, вы были записаны на " + " к специалисту ");
+            Label label = new Label("Запись прошла успешно! " + fio_pols.getText()+"!, вы были записаны на " + choice_time.getValue() + " к специалисту "
+            + choice_specialist.getValue());
             VBox layout = new VBox(label);
             layout.setAlignment(Pos.CENTER);
             Scene scene = new Scene(layout, 700, 100);
