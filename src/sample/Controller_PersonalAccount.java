@@ -37,17 +37,13 @@ public class Controller_PersonalAccount implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             loadFio();
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
         try {
             notes = getMyRecs();
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
         my_notes_ListView.setItems(FXCollections.observableArrayList(notes));
     }

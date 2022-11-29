@@ -30,10 +30,8 @@ public class Controller_Description  implements Initializable {
         l_name_note.setText(Controller_Main.proff);
         try {
             writeDescription();
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
     }
 

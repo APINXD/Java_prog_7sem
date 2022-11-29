@@ -29,10 +29,8 @@ public class DatabaseHandler extends DB {
             prSt.setString(4, user.getEmail());
             prSt.setString(5, user.getPassword());
             prSt.executeUpdate();
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
     }
 
@@ -45,10 +43,8 @@ public class DatabaseHandler extends DB {
             prSt.setString(1, user.getEmail());
             prSt.setString(2, user.getPassword());
             resSet = prSt.executeQuery();
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
         return resSet;
     }
@@ -56,15 +52,13 @@ public class DatabaseHandler extends DB {
     public ResultSet getProfessions() throws SQLException, ClassNotFoundException {
         String select = "SELECT * FROM " + DBconst.PROFESSIONS;
         PreparedStatement prSt = getDbConnection().prepareStatement(select);
-        ResultSet resSet = prSt.executeQuery();
-        return resSet;
+        return prSt.executeQuery();
     }
 
     public ResultSet getRecordings() throws SQLException, ClassNotFoundException {
         String select = "SELECT * FROM " + DBconst.WORKDATE;
         PreparedStatement prSt = getDbConnection().prepareStatement(select);
-        ResultSet resSet = prSt.executeQuery();
-        return resSet;
+        return prSt.executeQuery();
     }
 
     public ResultSet getRecordings(String prof) throws SQLException, ClassNotFoundException {
@@ -193,16 +187,14 @@ public class DatabaseHandler extends DB {
                 DBconst.EMPLOYEE_PROFESSIONS_ID + "=" + DBconst.PROFESSIONS + "." + DBconst.PROFESSIONS_ID;
         PreparedStatement prSt = getDbConnection().prepareStatement(select);
         prSt.setString(1, DBconst.CURRENT_USER);
-        ResultSet resSet = prSt.executeQuery();
-        return resSet;
+        return prSt.executeQuery();
     }
 
     public ResultSet dataInPA() throws SQLException, ClassNotFoundException {
         String select = "SELECT * FROM " + DBconst.USER + " WHERE " + DBconst.USER_ID + "=?";
         PreparedStatement prSt = getDbConnection().prepareStatement(select);
         prSt.setString(1, DBconst.CURRENT_USER);
-        ResultSet resSet = prSt.executeQuery();
-        return resSet;
+        return prSt.executeQuery();
     }
 
     public ResultSet recInEdit() throws SQLException, ClassNotFoundException {
@@ -216,8 +208,7 @@ public class DatabaseHandler extends DB {
         prSt.setString(1, DBconst.CURRENT_USER);
         prSt.setString(2, Controller_PersonalAccount.date);
         prSt.setString(3, Controller_PersonalAccount.time);
-        ResultSet resSet = prSt.executeQuery();
-        return resSet;
+        return prSt.executeQuery();
     }
 
 
@@ -265,8 +256,6 @@ public class DatabaseHandler extends DB {
                 DBconst.PROFESSIONS_PROFESSIONNAME + "=?";
         PreparedStatement prSt = getDbConnection().prepareStatement(select);
         prSt.setString(1, proff);
-        ResultSet resSet = prSt.executeQuery();
-        return resSet;
-
+        return prSt.executeQuery();
     }
 }

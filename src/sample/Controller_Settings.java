@@ -30,10 +30,8 @@ public class Controller_Settings implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             databp();
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
     }
 
@@ -71,7 +69,7 @@ public class Controller_Settings implements Initializable {
         } else if (option.get() == btn_no) {
             System.out.println("Cancelled!");
  //           this.label.setText("Cancelled!");
-        } else {
+//        } else {
    //         this.label.setText("-");
         }
     }

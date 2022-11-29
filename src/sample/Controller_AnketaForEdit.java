@@ -32,33 +32,25 @@ public class Controller_AnketaForEdit implements Initializable {
         l_name_note.setText(Controller_PersonalAccount.proff);
         try {
             loadFio();
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
         try {
             specForRec();
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
         try {
             defaultSpecRec();
             timeForRec();
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
         choice_specialist.setOnAction(event -> {
             try {
                 timeForRec();
-            } catch (SQLException throwables) {
+            } catch (SQLException | ClassNotFoundException throwables) {
                 throwables.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
             }
         });
     }
@@ -114,7 +106,7 @@ public class Controller_AnketaForEdit implements Initializable {
         } else if (option.get() ==btn_no) {
             System.out.println("Cancelled!");
             //           this.label.setText("Cancelled!");
-        } else {
+//        } else {
             //         this.label.setText("-");
         }
     }
