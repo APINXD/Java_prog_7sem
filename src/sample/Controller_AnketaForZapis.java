@@ -28,6 +28,7 @@ public class Controller_AnketaForZapis implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        l_name_note.setText(Controller_Main.proff);
         try{
             loadFio();
         } catch (SQLException | ClassNotFoundException throwables) {
